@@ -65,7 +65,7 @@ def bmi(h, w, unit):
 
 
 def google_search(query):
-    ans = search(query, lang='en')
+    ans = search(query, lang='en',num_results=5)
     return ans
 
 
