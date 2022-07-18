@@ -109,6 +109,11 @@ async def on_message(message):
         answer = message.content
         answer.replace('$search', '')
         await message.channel.send("Heyy {} here are the top results for {}".format(message.author.name, answer.replace('$search', '')))
+        i = 0
         for j in search(answer):
-            await message.channel.send(j)
+            if(i <= 5):
+                await message.channel.send(j)
+            else:
+                break
+            i += 1
 client.run(os.getenv("TOKEN"))
