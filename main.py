@@ -6,8 +6,10 @@ import discord
 import requests
 import json
 import random
-from googlesearch import search
-
+try:
+    from googlesearch import search
+except ImportError:
+    print("No module named 'google' found")
 load_dotenv()
 
 client = discord.Client()
@@ -64,11 +66,6 @@ def bmi(h, w, unit):
     return bmiarray
 
 
-def google_search(query):
-    ans = search(query, lang='en',num_results=5)
-    return ans
-
-
 @client.event
 async def on_ready():
     print("Logged in as {0.user}!!".format(client))
@@ -111,8 +108,7 @@ async def on_message(message):
     elif msg.startswith('$search'):
         answer = message.content
         answer.replace('$search', '')
-        result = google_search(answer)
-        for i in result:
-            print(i)
-            await message.channel.send(i)
+        await message.channel.send("Heyy {} here are the top results for {}".format(message.author.name, answer.replace('$search', '')))
+        for j in search(answer):
+            await message.channel.send(j)
 client.run(os.getenv("TOKEN"))
