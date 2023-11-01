@@ -14,7 +14,8 @@ load_dotenv()
 
 client = discord.Client()
 
-bad_words = ["fuck", "moron", "jerk", "idiot"]
+#enter inappropriate words
+bad_words = []
 
 # lists of roasts
 roast = ["YOU'RE SO UGLY HELLO KITTY SAID GOODBYE TO YOU", "YOUR FAMILY TREE IS A CACTUS, BECAUSE EVERYBODY ON IT IS A PRICK",
@@ -23,7 +24,7 @@ roast = ["YOU'RE SO UGLY HELLO KITTY SAID GOODBYE TO YOU", "YOUR FAMILY TREE IS 
          "There is someone out there for everyone. For you, it’s a therapist.", "All mistakes are fixable, yet you aren’t.",
          "Whoever told you to be yourself, gave you a bad advice.", "Honey, only thing bothering me is placed between your ears.", "Earth is full. Go home",
          "It is better to shut your mouth and make people think you are stupid than open it and remove all doubt",
-         "A glowstick has a brighter future than you. Lasts longer in bed, too"]
+         "A glowstick has a brighter future than you"]
 
 help_message = '''```Use "$"followed by any command.\n\n1.help : List of all commands the bot responds to. 
 2.inspire : Use this command to generate an inspirational quote. 
